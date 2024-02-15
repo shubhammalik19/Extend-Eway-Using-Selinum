@@ -7,8 +7,8 @@ from time import sleep
 class extendEwayBill:
     def __init__(self):
         self.login_url = "https://ewaybillgst.gov.in/Login.aspx"
-        self.txt_username = "dooncarrying"
-        self.txt_password = "12345@D"
+        self.txt_username = "your_eway_id"
+        self.txt_password = "your_eway_id_password"
         self.list_eway_cum_vehicle = []
         self.driver = webdriver.Firefox()
         # READ ALL EWAY BILLS FROM FILE
