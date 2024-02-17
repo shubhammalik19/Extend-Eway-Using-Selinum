@@ -56,7 +56,14 @@ class extendEwayBill:
             #create ctl00_ContentPlaceHolder1_Btn_go
             btn_go = self.driver.find_element(By.ID, "ctl00_ContentPlaceHolder1_Btn_go")
             
-            sleep(10)
+            while True:
+                try:
+                    btn_go.click()
+                    print("Go Button clicked")
+                    break
+                except:
+                    print("Go Button not clicked")
+                    continue
             while True:
                 try:
                     rbn_extent_0 = self.driver.find_element(By.ID, "rbn_extent_0")
