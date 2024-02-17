@@ -64,6 +64,8 @@ class extendEwayBill:
                 except:
                     print("Go Button not clicked")
                     continue
+            #scroll down
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             while True:
                 try:
                     rbn_extent_0 = self.driver.find_element(By.ID, "rbn_extent_0")
