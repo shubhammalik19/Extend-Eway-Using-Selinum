@@ -82,7 +82,7 @@ class extendEwayBill:
                     print("Radio not clicked")
                     continue
             
-            
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             while True:
                 try:
                     ddl_extend_select = Select( self.driver.find_element(By.ID, "ddl_extend") )
