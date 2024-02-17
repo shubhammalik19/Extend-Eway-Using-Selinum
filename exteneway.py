@@ -10,7 +10,7 @@ from selenium.common.exceptions import NoSuchElementException
 class extendEwayBill:
     def __init__(self):
         self.login_url = "https://ewaybillgst.gov.in/Login.aspx"
-        self.txt_username = "USERNAME"
+        self.txt_username = "USER"
         self.txt_password = "PASSWORD"
 
         log_file = "log.txt";
@@ -82,7 +82,6 @@ class extendEwayBill:
                     print("Radio not clicked")
                     continue
             
-            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             while True:
                 try:
                     ddl_extend_select = Select( self.driver.find_element(By.ID, "ddl_extend") )
@@ -93,6 +92,9 @@ class extendEwayBill:
             ddl_extend_select.select_by_value('4')
             txtRemarks = self.driver.find_element(By.ID, "txtRemarks")
             txtRemarks.send_keys("Transhipment")
+
+            sleep(2)
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             # GET VALUE OF txtFromPincode
             txtFromPincode = self.driver.find_element(By.ID, "txtFromPincode").get_attribute("value")
             #GET text of selected option of slFromState
@@ -135,6 +137,7 @@ class extendEwayBill:
                     print("btnsbmt not found")
                     continue
             sleep(2)
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             
             while True:
                 try:
